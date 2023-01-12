@@ -77,6 +77,7 @@ class github:
         self.ask = input("Enter an option:- ")
         if '1' in self.ask:
             os.system("clear")
+            print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.username = "Technical-Abm"
             self.token = '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'
