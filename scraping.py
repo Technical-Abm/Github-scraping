@@ -8,6 +8,8 @@ if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
+    print()
+    print()
     print("python3.11 has already installed.".center(50))
 
 github_scraping_link = "https://github.com/Technical-Abm/Github-scraping"
@@ -84,7 +86,7 @@ class github:
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.username = "Technical-Abm"
-            self.token = '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'
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.response = f'https://api.github.com/users/{self.username}/repos'
             self.reverse = requests.get(self.response, headers=self.headers)
@@ -137,7 +139,7 @@ class github:
             os.system("clear")
             print(wrapper)
             self.username = "Technical-Abm"
-            self.token = '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'
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.url = f'https://api.github.com/users/{self.username}'
             self.maincollect = requests.get(self.url, headers=self.headers)
