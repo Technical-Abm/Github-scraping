@@ -86,7 +86,7 @@ class github:
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.username = "Technical-Abm"
-            self.token = "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"
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.response = f'https://api.github.com/users/{self.username}/repos'
             self.reverse = requests.get(self.response, headers=self.headers)
@@ -139,7 +139,7 @@ class github:
             os.system("clear")
             print(wrapper)
             self.username = "Technical-Abm"
-            self.token = "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"
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.url = f'https://api.github.com/users/{self.username}'
             self.maincollect = requests.get(self.url, headers=self.headers)
