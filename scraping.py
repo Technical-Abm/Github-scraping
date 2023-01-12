@@ -32,7 +32,6 @@ class logo:
         self.project = "Github scraping tool"
         pass
 
-
 logo_object = logo()
 
 author = logo_object.author
@@ -61,10 +60,9 @@ wrapper = """
 ---------------------------------------------------
 """.format(author, github, page, website,forks,project)
 
-
 class github:
     def __init__(self):
-        os.system("cls")
+        os.system("clear")
         self.option_1 = "[1] Scraping abm owner github-api"
         self.option_2 = "[2] Scraping abm owner github followers list"
         self.option_3 = "[3] Scraping own your github (token-required)"
@@ -72,7 +70,7 @@ class github:
         pass
 
     def collect(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
@@ -82,7 +80,7 @@ class github:
         print()
         self.ask = input("Enter an option:- ")
         if '1' in self.ask:
-            os.system("cls")
+            os.system("clear")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.username = "Technical-Abm"
@@ -136,7 +134,7 @@ class github:
                     time.sleep(2)
                     exit()
         elif "2" in self.ask:
-            os.system("cls")
+            os.system("clear")
             print(wrapper)
             self.username = "Technical-Abm"
             self.token = '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'
@@ -162,7 +160,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -184,7 +182,7 @@ class github:
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("cls")
+                os.system("clear")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -222,7 +220,6 @@ class github:
             exit()
         elif 'No' or 'no' in self.alert:
             mycode.collect()
-
 
 mycode = github()
 mycode.collect()
