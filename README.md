@@ -20,6 +20,4 @@ else:
 
 # you can view my portfolio website to check details insteresting, skills, get cmd and mores.
 
-```
-https://abmportfolioweb.000webhostapp.com/
-```
+[](https://abmportfolioweb.000webhostapp.com/)
