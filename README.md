@@ -18,6 +18,4 @@ sys.version_info < (3, 11):
 else:
   print("Ahm, you are using update python version")
 ```
-# you can view my portfolio website to check details insteresting, skills, get cmd and mores.
-
-[](https://abmportfolioweb.000webhostapp.com/)
+### you can view my portfolio website to check details insteresting, skills, get cmd and mores.
