@@ -86,13 +86,13 @@ class github:
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.username = "Technical-Abm"
-            self.token = "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"
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.response = f'https://api.github.com/users/{self.username}/repos'
             self.reverse = requests.get(self.response, headers=self.headers)
             if self.reverse.status_code == 401:
                 print(
-                    "Token has expired, Please wait to new generate token....".center(50))
+                    "Token has expired, Please wait for new generate token".center(50))
                 time.sleep(3)
                 exit()
             else:
@@ -139,7 +139,7 @@ class github:
             os.system("clear")
             print(wrapper)
             self.username = "Technical-Abm"
-            self.token = "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"
+            self.token = "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"
             self.headers = {'Authorization': 'Token ' + self.token}
             self.url = f'https://api.github.com/users/{self.username}'
             self.maincollect = requests.get(self.url, headers=self.headers)
