@@ -7,6 +7,8 @@ pkg install install
 pkg install python
 rm -rf Technical-Abm
 git clone https://github.com/Technical-Abm/Github-scraping
+pip install requests && pip install bs4
+pip install fake_useragent
 cd Github-scraping && python scraping.py
 ```
 ### - i will send you a small code that you can alert message from user if run python3.10
