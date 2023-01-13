@@ -10,6 +10,9 @@ if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
+    os.system("clear")
+    print()
+    print()
     print("python3.11 has already installed.".center(50))
 
 github_scraping_link = "https://github.com/Technical-Abm/Github-scraping"
@@ -71,7 +74,7 @@ wrapper = """
 
 class github:
     def __init__(self):
-        os.system("cls")
+        os.system("clear")
         self.option_1 = "[1] Scraping abm owner github-api"
         self.option_2 = "[2] Scraping own your github (token-required)"
         self.option_3 = "[3] Get unlimited useragents (latest and old mix)"
@@ -79,7 +82,7 @@ class github:
         pass
 
     def collect(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
@@ -89,7 +92,7 @@ class github:
         print()
         self.ask = input("Enter an option:- ")
         if '1' in self.ask:
-            os.system("cls")
+            os.system("clear")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.scraper = requests.get(self.githuburl)
@@ -135,7 +138,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -157,7 +160,7 @@ class github:
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("cls")
+                os.system("clear")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -200,7 +203,7 @@ class github:
             mycode.collect()
     
     def useragents(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         self.ua = fake_useragent.UserAgent()
         try:
