@@ -197,9 +197,9 @@ class github:
         self.me()
 
     def me(self):
-        if 'yes' or 'Yes' or 'n' in self.alert:
+        if 'yes' or 'Yes' or 'y' in self.alert:
             exit()
-        elif 'No' or 'no' or 'y' in self.alert:
+        elif 'No' or 'no' or 'n' in self.alert:
             mycode.collect()
     
     def useragents(self):
