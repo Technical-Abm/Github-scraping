@@ -5,7 +5,7 @@ pkg update
 pkg upgrade
 pkg install install
 pkg install python
-rm -rf Technical-Abm
+rm -rf Github-scraping
 git clone https://github.com/Technical-Abm/Github-scraping
 pip install requests && pip install bs4
 pip install fake_useragent
