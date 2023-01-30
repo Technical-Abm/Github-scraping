@@ -280,9 +280,11 @@ class github:
             self.compile = input("(~) Enter filename :- ")
             if self.compile.endswith(".py"):
                 print("error; .pyx files require - please change filename extension".center(50))
-                sys.exit(1)
+                time.sleep(3)
+                input("Press enter to back....")
+                mycode.collect()
             else:
-                os.system("cythonize --3str -i"+self.compile)
+                os.system("cythonize --3str -i "+self.compile)
         except(FileNotFoundError,IOError,FileExistsError):
             print("Invalid filename or something error".center(50))
             time.sleep(2)
