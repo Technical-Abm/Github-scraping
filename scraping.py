@@ -10,7 +10,7 @@ if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
-    os.system("clear")
+    os.system("cls")
     print()
     print()
     print("python3.11 has already installed.".center(50))
@@ -32,16 +32,13 @@ else:
     time.sleep(2)
     exit()
 
-
 class logo:
     def __init__(self):
         self.author = "Technical Abm"
         self.github = "https://github.com/Technical-Abm"
         self.page = "https://www.facebook.com/techabm"
         self.website = "https://abmportfolioweb.000webhostapp.com/"
-        self.project = "Github scraping tool"
         pass
-
 
 logo_object = logo()
 
@@ -49,7 +46,6 @@ author = logo_object.author
 github = logo_object.github
 page = logo_object.page
 website = logo_object.website
-project = logo_object.project
 
 wrapper = """  
              d8888 888888b.   888b     d888 
@@ -67,32 +63,33 @@ wrapper = """
 (~) Abm web:- {}
 (~) Forks  :- {}
 ---------------------------------------------------
-        project :- {}
----------------------------------------------------
-""".format(author, github, page, website, forks, project)
-
+""".format(author, github, page, website, forks)
 
 class github:
     def __init__(self):
-        os.system("clear")
-        self.option_1 = "[1] Scraping abm owner github-api"
+        os.system("cls")
+        self.option_1 = "[1] Scraping abm owner github lookup"
         self.option_2 = "[2] Scraping own your github (token-required)"
         self.option_3 = "[3] Get unlimited useragents (latest and old mix)"
-        self.option_4 = "[4] Exit"
+        self.option_4 = "[4] Get own your iplookup"
+        self.option_5 = "[5] Get someone ipaddress (lookup)"
+        self.option_6 = "[6] Install Cython and compile on python3"
         pass
 
     def collect(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
         print(self.option_3)
         print(self.option_4)
+        print(self.option_5)
+        print(self.option_6)
         print("---------------------------------------------------")
         print()
         self.ask = input("Enter an option:- ")
         if '1' in self.ask:
-            os.system("clear")
+            os.system("cls")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.scraper = requests.get(self.githuburl)
@@ -131,6 +128,12 @@ class github:
         elif "3" in self.ask:
             self.useragents()
         elif "4" in self.ask:
+            self.ipaddress()
+        elif "5" in self.ask:
+            self.get()
+        elif "6" in self.ask:
+            self.compile()
+        elif "7" in self.ask:
             self.exiting()
         else:
             print("Please select an valid option".center(50))
@@ -138,7 +141,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -160,7 +163,7 @@ class github:
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("clear")
+                os.system("cls")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -203,7 +206,7 @@ class github:
             mycode.collect()
     
     def useragents(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         self.ua = fake_useragent.UserAgent()
         try:
@@ -229,6 +232,62 @@ class github:
         print("File saved as useragent.txt".center(50))
         time.sleep(3)
         mycode.collect()
+    
+    def ipaddress(self):
+        os.system("cls")
+        print(wrapper)
+        print("Your ipaddress lookup....".center(50))
+        print()
+        self.ip = requests.get("http://ip-api.com/json/")
+        self.details = self.ip.json()
+        print("status :- "+self.details["status"])
+        print("country :- "+self.details["country"])
+        print("countryCode :- "+self.details["countryCode"])
+        print("regionName :- "+self.details["regionName"])
+        print("city :- "+self.details["city"])
+        print("isp:- "+self.details["isp"])
+        print()
+        input("Press enter to back.. ")
+        mycode.collect()
+
+    def get(self):
+        os.system("cls")
+        print(wrapper)
+        try:
+            self.get = int(input("(~) Enter ipaddress :- "))
+            self.clean = requests.get("http://ip-api.com/json/"+self.get)
+            self.go = self.clean.json()
+            print("Your ipaddress lookup....".center(50))
+            print("status :- "+self.go["status"])
+            print("country :- "+self.go["country"])
+            print("countryCode :- "+self.go["countryCode"])
+            print("regionName :- "+self.go["regionName"])
+            print("city :- "+self.go["city"])
+            print("isp:- "+self.go["isp"])
+            print()
+            input("Press enter to back.. ")
+            mycode.collect()
+        except(KeyError,AttributeError,KeyboardInterrupt):
+            print("something wrong....".center(50))
+            mycode.collect()
+
+    def compile(self):
+        os.system("cls")
+        print(wrapper)
+        print("Compile cython on your python3".center(50))
+        print()
+        try:
+            self.compile = input("(~) Enter filename :- ")
+            if self.compile.endswith(".pyx"):
+                print("error; .pyx files require - please change filename extension".center(50))
+                sys.exit(1)
+            else:
+                os.system("cythonize --3str -i"+self.compile)
+        except(FileNotFoundError,IOError,FileExistsError):
+            print("Invalid filename or something error".center(50))
+            time.sleep(2)
+            input("Press enter to back...")
+            mycode.collect()
 
 mycode = github()
 mycode.collect()
