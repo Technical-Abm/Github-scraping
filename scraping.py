@@ -10,7 +10,7 @@ if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
-    os.system("clear")
+    os.system("cls")
     print()
     print()
     print("python3.11 has already installed.".center(50))
@@ -67,7 +67,7 @@ wrapper = """
 
 class github:
     def __init__(self):
-        os.system("clear")
+        os.system("cls")
         self.option_1 = "[1] Scraping abm owner github lookup"
         self.option_2 = "[2] Scraping own your github (token-required)"
         self.option_3 = "[3] Get unlimited useragents (latest and old mix)"
@@ -79,7 +79,7 @@ class github:
         pass
 
     def collect(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
@@ -87,11 +87,13 @@ class github:
         print(self.option_4)
         print(self.option_5)
         print(self.option_6)
+        print(self.option_7)
+        print(self.option_8)
         print("---------------------------------------------------")
         print()
         self.ask = input("Enter an option:- ")
         if '1' in self.ask:
-            os.system("clear")
+            os.system("cls")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.scraper = requests.get(self.githuburl)
@@ -145,7 +147,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -167,7 +169,7 @@ class github:
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("clear")
+                os.system("cls")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -210,7 +212,7 @@ class github:
             mycode.collect()
     
     def useragents(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         self.ua = fake_useragent.UserAgent()
         try:
@@ -238,7 +240,7 @@ class github:
         mycode.collect()
     
     def ipaddress(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("Your ipaddress lookup....".center(50))
         print()
@@ -255,7 +257,7 @@ class github:
         mycode.collect()
 
     def get(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         try:
             self.get = int(input("(~) Enter ipaddress :- "))
@@ -276,7 +278,7 @@ class github:
             mycode.collect()
 
     def compile(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("Compile cython on your python3".center(50))
         print()
@@ -296,7 +298,7 @@ class github:
             mycode.collect()
 
     def jslink(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         self.githuburl = "https://github.com/Technical-Abm"
         self.scraper = requests.get(self.githuburl)
