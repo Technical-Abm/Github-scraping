@@ -54,7 +54,7 @@ def get_github_followers(username):
     followers = response.json()
     return followers
 
-os.system("cls")
+os.system("clear")
 print(wrapper)
 username = input("Enter Github username:- ")
 user_info = get_github_user_info(username)
