@@ -56,14 +56,14 @@ def get_github_followers(username):
 
 os.system("clear")
 print(wrapper)
-username = input("Enter Github username:- ")
+username = input(" (~) Enter Github username:- ")
 user_info = get_github_user_info(username)
 followers = get_github_followers(username)
 
-print(f"Username: {user_info['login']}")
-print(f"Github link:- {user_info['html_url']}")
-print(f"Creation date: {user_info['created_at']}")
-print(f"Total followers: {user_info['followers']}")
+print(f" (~) Username: {user_info['login']}")
+print(f" (~) Github link:- {user_info['html_url']}")
+print(f" (~) Creation date: {user_info['created_at']}")
+print(f" (~) Total followers: {user_info['followers']}")
 
 for follower in followers:
     print(f"Follower: {follower['login']}")
