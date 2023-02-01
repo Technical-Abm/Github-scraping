@@ -298,18 +298,10 @@ class github:
             mycode.collect()
 
     def jslink(self):
-        os.system("clear")
-        print(wrapper)
-        self.githuburl = "https://github.com/Technical-Abm"
-        self.scraper = requests.get(self.githuburl)
-        self.main = BeautifulSoup(self.scraper.content, "html.parser")
-        self.find = self.main.find("a", {"class": "js-navigation-open Link--primary", "title": "find.py"})
-        if "find.py" in self.find:
+        try:
             os.system("cd username-finder && python find.py")
-        else:
-            print("Dir not found".center(50))
-            time.sleep(3)
-            mycode.collect()
+        except KeyError:
+            print("something wrong...".center(50))
         
 mycode = github()
 mycode.collect()
