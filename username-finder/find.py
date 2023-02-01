@@ -66,4 +66,4 @@ print(f" (~) Creation date: {user_info['created_at']}")
 print(f" (~) Total followers: {user_info['followers']}")
 
 for follower in followers:
-    print(f"Follower: {follower['login']}")
+    print(f" (~) Follower: {follower['login']}")
