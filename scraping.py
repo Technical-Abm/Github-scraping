@@ -74,6 +74,8 @@ class github:
         self.option_4 = "[4] Get own your iplookup"
         self.option_5 = "[5] Get someone ipaddress (lookup)"
         self.option_6 = "[6] Install Cython and compile on python3"
+        self.option_7 = "[7] Find github username and scraping"
+        self.option_8 = "[8] Exit"
         pass
 
     def collect(self):
@@ -134,7 +136,9 @@ class github:
         elif "6" in self.ask:
             self.compile()
         elif "7" in self.ask:
-            self.exiting()
+            self.jslink()
+        elif "8" in self.ask:
+            sys.exit()
         else:
             print("Please select an valid option".center(50))
             time.sleep(2)
@@ -291,5 +295,19 @@ class github:
             input("Press enter to back...")
             mycode.collect()
 
+    def jslink(self):
+        os.system("clear")
+        print(wrapper)
+        self.githuburl = "https://github.com/Technical-Abm"
+        self.scraper = requests.get(self.githuburl)
+        self.main = BeautifulSoup(self.scraper.content, "html.parser")
+        self.find = self.main.find("a", {"class": "js-navigation-open Link--primary", "title": "username-finder"})
+        if "username-finder" in self.find:
+            os.system("cd username-finder && python find.py")
+        else:
+            print("Dir not found".center(50))
+            time.sleep(3)
+            mycode.collect()
+        
 mycode = github()
 mycode.collect()
