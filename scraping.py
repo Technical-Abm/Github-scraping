@@ -37,7 +37,7 @@ class logo:
         self.author = "Technical Abm"
         self.github = "https://github.com/Technical-Abm"
         self.page = "https://www.facebook.com/techabm"
-        self.website = "https://abmportfolioweb.000webhostapp.com/"
+        self.websiteabm = "https://abmportfolioweb.000webhostapp.com/"
         pass
 
 logo_object = logo()
@@ -45,7 +45,7 @@ logo_object = logo()
 author = logo_object.author
 github = logo_object.github
 page = logo_object.page
-website = logo_object.website
+website = logo_object.websiteabm
 
 wrapper = """  
              d8888 888888b.   888b     d888 
@@ -63,7 +63,7 @@ wrapper = """
 (~) Abm web:- {}
 (~) Forks  :- {}
 ---------------------------------------------------
-""".format(author, github, page, website, forks)
+""".format(author, github, page, websiteabm, forks)
 
 class github:
     def __init__(self):
