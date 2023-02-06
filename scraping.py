@@ -95,7 +95,7 @@ class github:
         print("---------------------------------------------------")
         print()
         self.ask = input("Enter an option:- ")
-        if '1' or '01' in self.ask:
+        if '01' in self.ask:
             os.system("clear")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
@@ -135,21 +135,21 @@ class github:
                 print("Recorde not found or dir invalid".center(50))
                 time.sleep(2)
                 exit()
-        elif "2" or "02" in self.ask:
+        elif "02" in self.ask:
             self.container()
-        elif "3" or "03" in self.ask:
+        elif "03" in self.ask:
             self.someoneaccess()
-        elif "4" or "04" in self.ask:
+        elif "04" in self.ask:
             self.useragents()
-        elif "5" or "05" in self.ask:
+        elif "05" in self.ask:
             self.ipaddress()
-        elif "6" or "06" in self.ask:
+        elif "06" in self.ask:
             self.get()
-        elif "7" or "07" in self.ask:
+        elif "07" in self.ask:
             self.compile()
-        elif "8" or "08" in self.ask:
+        elif "08" in self.ask:
             self.jslink()
-        elif "9" or "09" in self.ask:
+        elif "09" in self.ask:
             sys.exit()
         else:
             print("Please select an valid option".center(50))
