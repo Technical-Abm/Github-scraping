@@ -5,21 +5,15 @@ from bs4 import BeautifulSoup
 import sys
 import fake_useragent
 import subprocess
-import platform
 
 if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
-    os.system("cls")
+    os.system("clear")
     print()
     print()
     print("python3.11 has already installed.".center(50))
-
-    if platform.system() == 'Windows':
-        os.system('cls')
-    else:
-        os.system('clear')
 
 github_scraping_link = "https://github.com/Technical-Abm/Github-scraping"
 response_data = requests.get(github_scraping_link)
@@ -74,7 +68,7 @@ wrapper = """
 
 class github:
     def __init__(self):
-        os.system("cls")
+        os.system("clear")
         self.option_1 = "[01] Scraping abm owner github lookup"
         self.option_2 = "[02] Scraping own your github (token-required)"
         self.option_3 = "[03] Scraping Someone user complete public access"
@@ -87,7 +81,7 @@ class github:
         pass
 
     def collect(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
@@ -102,7 +96,7 @@ class github:
         print()
         self.ask = input("Enter an option:- ")
         if '1' or '01' in self.ask:
-            os.system("cls")
+            os.system("clear")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.scraper = requests.get(self.githuburl)
@@ -163,7 +157,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -189,7 +183,7 @@ class github:
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("cls")
+                os.system("clear")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -232,7 +226,7 @@ class github:
             mycode.collect()
 
     def useragents(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         self.ua = fake_useragent.UserAgent()
         try:
@@ -261,7 +255,7 @@ class github:
         mycode.collect()
 
     def ipaddress(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("Your ipaddress lookup....".center(50))
         print()
@@ -278,7 +272,7 @@ class github:
         mycode.collect()
 
     def get(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         try:
             self.get = int(input("(~) Enter ipaddress :- "))
@@ -299,7 +293,7 @@ class github:
             mycode.collect()
 
     def compile(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("Compile cython on your python3".center(50))
         print()
@@ -326,7 +320,7 @@ class github:
             print("something wrong...".center(50))
     
     def someoneaccess(self):
-        os.system("cls")
+        os.system("clear")
         print(wrapper)
         print("Enter correct username to find Github all access data".center(50))
         print()
