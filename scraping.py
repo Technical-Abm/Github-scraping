@@ -10,7 +10,7 @@ if sys.version_info < (3, 11):
     print("This script requires Python 3.11 or higher. Please upgrade your Python version.".center(50))
     sys.exit()
 else:
-    os.system("clear")
+    os.system("cls")
     print()
     print()
     print("python3.11 has already installed.".center(50))
@@ -45,7 +45,7 @@ logo_object = logo()
 author = logo_object.author
 github = logo_object.github
 page = logo_object.page
-website = logo_object.websiteabm
+websiteabm = logo_object.websiteabm
 
 wrapper = """  
              d8888 888888b.   888b     d888 
@@ -67,19 +67,20 @@ wrapper = """
 
 class github:
     def __init__(self):
-        os.system("clear")
-        self.option_1 = "[1] Scraping abm owner github lookup"
-        self.option_2 = "[2] Scraping own your github (token-required)"
-        self.option_3 = "[3] Get unlimited useragents (latest and old mix)"
-        self.option_4 = "[4] Get own your iplookup"
-        self.option_5 = "[5] Get someone ipaddress (lookup)"
-        self.option_6 = "[6] Install Cython and compile on python3"
-        self.option_7 = "[7] Find github username and scraping"
-        self.option_8 = "[8] Exit"
+        os.system("cls")
+        self.option_1 = "[01] Scraping abm owner github lookup"
+        self.option_2 = "[02] Scraping own your github (token-required)"
+        self.option_3 = "[03] Scraping Someone user complete public access"
+        self.option_4 = "[04] Get unlimited useragents (latest and old mix)"
+        self.option_5 = "[05] Get own your iplookup"
+        self.option_6 = "[06] Get someone ipaddress (lookup)"
+        self.option_7 = "[07] Install Cython and compile on python3"
+        self.option_8 = "[08] Find github username and scraping"
+        self.option_9 = "[09] Exit"
         pass
 
     def collect(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print(self.option_1)
         print(self.option_2)
@@ -89,21 +90,27 @@ class github:
         print(self.option_6)
         print(self.option_7)
         print(self.option_8)
+        print(self.option_9)
         print("---------------------------------------------------")
         print()
         self.ask = input("Enter an option:- ")
-        if '1' in self.ask:
-            os.system("clear")
+        if '1' or '01' in self.ask:
+            os.system("cls")
             print(wrapper)
             self.githuburl = "https://github.com/Technical-Abm"
             self.scraper = requests.get(self.githuburl)
             self.main = BeautifulSoup(self.scraper.content, "html.parser")
-            self.ownername = self.main.find("span", {"class": "p-name vcard-fullname d-block overflow-hidden"}).get_text()
-            self.ownerusername = self.main.find("span", {"class": "p-nickname vcard-username d-block"}).get_text()
+            self.ownername = self.main.find(
+                "span", {"class": "p-name vcard-fullname d-block overflow-hidden"}).get_text()
+            self.ownerusername = self.main.find(
+                "span", {"class": "p-nickname vcard-username d-block"}).get_text()
             self.joingithub = self.main.find("a", {"id": "year-link-2019"})
-            self.urlscrapering = self.main.find("span", {"class": "text-bold color-fg-default"}).get_text()
-            self.urlscraperingdata = self.main.find("span", {"class": "Counter"}).get_text()
-            self.urlscraperingmain = self.main.find("div", {"class": "p-note user-profile-bio mb-3 js-user-profile-bio f4"}).get_text()
+            self.urlscrapering = self.main.find(
+                "span", {"class": "text-bold color-fg-default"}).get_text()
+            self.urlscraperingdata = self.main.find(
+                "span", {"class": "Counter"}).get_text()
+            self.urlscraperingmain = self.main.find(
+                "div", {"class": "p-note user-profile-bio mb-3 js-user-profile-bio f4"}).get_text()
             for self.connection in self.main:
                 print("Abm Owner Github Scraping Details".center(50))
                 print()
@@ -127,19 +134,21 @@ class github:
                 print("Recorde not found or dir invalid".center(50))
                 time.sleep(2)
                 exit()
-        elif "2" in self.ask:
+        elif "2" or "02" in self.ask:
             self.container()
-        elif "3" in self.ask:
+        elif "3" or "03" in self.ask:
+            self.someoneaccess()
+        elif "4" or "04" in self.ask:
             self.useragents()
-        elif "4" in self.ask:
+        elif "5" or "05" in self.ask:
             self.ipaddress()
-        elif "5" in self.ask:
+        elif "6" or "06" in self.ask:
             self.get()
-        elif "6" in self.ask:
+        elif "7" or "07" in self.ask:
             self.compile()
-        elif "7" in self.ask:
+        elif "8" or "08" in self.ask:
             self.jslink()
-        elif "8" in self.ask:
+        elif "9" or "09" in self.ask:
             sys.exit()
         else:
             print("Please select an valid option".center(50))
@@ -147,7 +156,7 @@ class github:
             mycode.collect()
 
     def container(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("You can scraping own your github".center(50))
         print()
@@ -162,14 +171,18 @@ class github:
         self.main = BeautifulSoup(self.scraper.content, "html.parser")
         self.htmlexpired = "<span class='text-semibold text-italic'>on Sun, Feb 12 2023</span>"
         self.find = BeautifulSoup(self.htmlexpired, "html.parser")
-        self.expirydate = self.find.find("span", {"class": "text-semibold text-italic"}).get_text()
-        self.urlscrapering = self.main.find("span", {"class": "text-bold color-fg-default"}).get_text()
-        self.urlscraperingdata = self.main.find("span", {"class": "Counter"}).get_text()
-        self.urlscraperingmain = self.main.find("div", {"class": "p-note user-profile-bio mb-3 js-user-profile-bio f4"}).get_text()
+        self.expirydate = self.find.find(
+            "span", {"class": "text-semibold text-italic"}).get_text()
+        self.urlscrapering = self.main.find(
+            "span", {"class": "text-bold color-fg-default"}).get_text()
+        self.urlscraperingdata = self.main.find(
+            "span", {"class": "Counter"}).get_text()
+        self.urlscraperingmain = self.main.find(
+            "div", {"class": "p-note user-profile-bio mb-3 js-user-profile-bio f4"}).get_text()
         if self.response.status_code == 200:
             self.repos = self.response.json()
             for self.repo in self.repos:
-                os.system("clear")
+                os.system("cls")
                 print(wrapper)
                 print("Scraping data output".center(50))
                 time.sleep(2)
@@ -210,13 +223,14 @@ class github:
             exit()
         elif 'No' or 'no' or 'n' in self.alert:
             mycode.collect()
-    
+
     def useragents(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         self.ua = fake_useragent.UserAgent()
         try:
-            self.useragent = int(input("(~) How many user-agents do you want to generate? "))
+            self.useragent = int(
+                input("(~) How many user-agents do you want to generate? "))
             user_agents_main = []
             for x in range(self.useragent):
                 user_agents_main.append(self.ua.random)
@@ -238,9 +252,9 @@ class github:
         print("File saved as useragent.txt".center(50))
         time.sleep(3)
         mycode.collect()
-    
+
     def ipaddress(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("Your ipaddress lookup....".center(50))
         print()
@@ -257,7 +271,7 @@ class github:
         mycode.collect()
 
     def get(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         try:
             self.get = int(input("(~) Enter ipaddress :- "))
@@ -273,25 +287,26 @@ class github:
             print()
             input("Press enter to back.. ")
             mycode.collect()
-        except(KeyError,AttributeError,KeyboardInterrupt):
+        except (KeyError, AttributeError, KeyboardInterrupt):
             print("something wrong....".center(50))
             mycode.collect()
 
     def compile(self):
-        os.system("clear")
+        os.system("cls")
         print(wrapper)
         print("Compile cython on your python3".center(50))
         print()
         try:
             self.compile = input("(~) Enter filename :- ")
             if self.compile.endswith(".py"):
-                print("error; .pyx files require - please change filename extension".center(50))
+                print(
+                    "error; .pyx files require - please change filename extension".center(50))
                 time.sleep(3)
                 input("Press enter to back....")
                 mycode.collect()
             else:
                 os.system("cythonize --3str -i "+self.compile)
-        except(FileNotFoundError,IOError,FileExistsError):
+        except (FileNotFoundError, IOError, FileExistsError):
             print("Invalid filename or something error".center(50))
             time.sleep(2)
             input("Press enter to back...")
@@ -302,6 +317,78 @@ class github:
             os.system("cd username-finder && python find.py")
         except KeyError:
             print("something wrong...".center(50))
-        
+    
+    def someoneaccess(self):
+        os.system("cls")
+        print(wrapper)
+        print("Enter correct username to find Github all access data".center(50))
+        print()
+        self.username = input("(~) Enter Username :- ")
+        print("---------------------------------------------------")
+        print()
+        self.urllink = f"https://api.github.com/users/{self.username}"
+        self.paramas = {
+            "Accept": "application/vnd.github+json"
+            }
+        self.response = requests.get(self.urllink, headers=self.paramas)
+        if self.response.status_code == 200:
+            self.reverse = self.response.json()
+            try:
+                if "login" in self.reverse:
+                    print("(~) Owner Username : %s" % self.reverse["login"])
+                elif "login" not in self.reverse:
+                    print(" (~) Username not found : %s" % self.reverse["login"])
+                if "html_url" in self.reverse:
+                    print("(~) User Link : %s" % self.reverse["html_url"])
+                elif "html_url" not in self.reverse:
+                    print("(~) Link not found : %s" % self.reverse["html_url"])
+                if "type" in self.reverse:
+                    print("(~) User Type : %s" % self.reverse["type"])
+                elif "type" not in self.reverse:
+                    print("(~) User not found : %s" % self.reverse["type"])
+                if "location" in self.reverse:
+                    print("(~) User Location : %s" % self.reverse["location"])
+                elif "location" not in self.reverse:
+                    print("(~) Location not found : %s" % self.reverse["location"])
+                if "bio" in self.reverse:
+                    print("(~) User Bio : %s" % self.reverse["bio"])
+                elif "bio" not in self.reverse:
+                    print("(~) Bio not found : %s" % self.reverse["bio"])
+                if "public_repos" in self.reverse:
+                    print("(~) User Public Repo : %s" % self.reverse["public_repos"])
+                elif "public_repos" not in self.reverse:
+                    print("(~) Public Repo not found : %s" % self.reverse["public_repos"])
+                if "followers" in self.reverse:
+                    print("(~) User Followers : %s" % self.reverse["followers"])
+                elif "followers" not in self.reverse:
+                    print("(~) Followers not found : %s" % self.reverse["followers"])
+                if "following" in self.reverse:
+                    print("(~) User Following : %s" % self.reverse["following"])
+                elif "following" not in self.reverse:
+                    print("(~) Following not found : %s" % self.reverse["following"])
+                if "created_at" in self.reverse:
+                    print("(~) User Joined/Created : %s" % self.reverse["created_at"])
+                elif "created_at" not in self.reverse:
+                    print("(~) Joined/Created not found : %s" % self.reverse["created_at"])
+                if "updated_at" in self.reverse:
+                    print("(~) User Last Updated : %s" % self.reverse["updated_at"])
+                elif "updated_at" not in self.reverse:
+                    print("(~) Last Updated not found : %s" % self.reverse["updated_at"])
+                print()
+                input(" Press enter to back < ")
+                mycode.collect()
+            except KeyError:
+                print("Something wrong".center(50))
+                time.sleep(2)
+                mycode.collect()
+        elif self.response.status_code == 404:
+            print("Error 404, You entered {} username not found ".center(50)).format(self.username)
+            time.sleep(2)
+            mycode.collect()
+        else:
+            print("Invalid response file".center(50))
+            time.sleep(2)
+            mycode.collect()
+            
 mycode = github()
 mycode.collect()
